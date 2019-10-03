@@ -16,7 +16,7 @@ module.exports = fp(function from (fastify, opts, next) {
   const cache = lru(opts.cacheURLs || 100)
   const base = opts.base
   const { request, close } = buildRequest({
-    agent: opts.agent,
+    agents: opts.agents,
     http2: !!opts.http2,
     base,
     keepAliveMsecs: opts.keepAliveMsecs,
